@@ -21,6 +21,8 @@ class ListViewCoordinator: BaseCoordinator<Void> {
         let viewController = ListViewController()
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.navigationBar.prefersLargeTitles = true
+        navigationController.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationController.navigationBar.tintColor = .black
         
         viewController.viewModel = viewModel
         

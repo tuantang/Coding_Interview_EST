@@ -47,6 +47,8 @@
 		559A525A27DFA451001803C9 /* AppEnvironement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A525827DFA451001803C9 /* AppEnvironement.swift */; };
 		559A525D27DFA74F001803C9 /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A525C27DFA74F001803C9 /* ListViewCell.swift */; };
 		559A525E27DFA74F001803C9 /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A525C27DFA74F001803C9 /* ListViewCell.swift */; };
+		55E510A927DFBE0400486864 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E510A827DFBE0400486864 /* DetailViewController.swift */; };
+		55E510AB27DFBE5400486864 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E510AA27DFBE5400486864 /* DetailViewModel.swift */; };
 		74BECF7C1ADE29A8D1352150 /* Pods_Boilerplate_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA17B94F2DE45D3E53F5722 /* Pods_Boilerplate_iOSTests.framework */; };
 		D5614F18D236509C5F325D84 /* Pods_Boilerplate_iOS_Boilerplate_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D872DBDE31253549A2732C8 /* Pods_Boilerplate_iOS_Boilerplate_iOSUITests.framework */; };
 /* End PBXBuildFile section */
@@ -101,6 +103,8 @@
 		559A525527DFA432001803C9 /* GithubRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRequest.swift; sourceTree = "<group>"; };
 		559A525827DFA451001803C9 /* AppEnvironement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironement.swift; sourceTree = "<group>"; };
 		559A525C27DFA74F001803C9 /* ListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
+		55E510A827DFBE0400486864 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		55E510AA27DFBE5400486864 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		6DA17B94F2DE45D3E53F5722 /* Pods_Boilerplate_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Boilerplate_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE4A5F795EEF706CE9277AD9 /* Pods_Boilerplate_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Boilerplate_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8A9453F8F1390CF53A68D1 /* Pods-Boilerplate-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boilerplate-iOS.release.xcconfig"; path = "Target Support Files/Pods-Boilerplate-iOS/Pods-Boilerplate-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 		559A522727DFA15F001803C9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				55E510A727DFBDF300486864 /* Detail */,
 				559A522827DFA16D001803C9 /* List */,
 			);
 			path = Scenes;
@@ -338,6 +343,15 @@
 				559A525C27DFA74F001803C9 /* ListViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		55E510A727DFBDF300486864 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				55E510A827DFBE0400486864 /* DetailViewController.swift */,
+				55E510AA27DFBE5400486864 /* DetailViewModel.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		D4808AFA3F028B1029240E5A /* Frameworks */ = {
@@ -605,6 +619,7 @@
 				559A524B27DFA3B8001803C9 /* User.swift in Sources */,
 				559A525927DFA451001803C9 /* AppEnvironement.swift in Sources */,
 				559A524827DFA2B5001803C9 /* InternalErrorCode.swift in Sources */,
+				55E510AB27DFBE5400486864 /* DetailViewModel.swift in Sources */,
 				559A523027DFA1DA001803C9 /* UIView_Ext.swift in Sources */,
 				559A524527DFA2A4001803C9 /* GenericError.swift in Sources */,
 				559A522527DFA147001803C9 /* AppCoordinator.swift in Sources */,
@@ -612,6 +627,7 @@
 				559A523627DFA212001803C9 /* ListViewModel.swift in Sources */,
 				559A523327DFA1FB001803C9 /* ListViewController.swift in Sources */,
 				559A523A27DFA23D001803C9 /* ActivityIndicator.swift in Sources */,
+				55E510A927DFBE0400486864 /* DetailViewController.swift in Sources */,
 				559A523D27DFA255001803C9 /* APIService.swift in Sources */,
 				559A525627DFA432001803C9 /* GithubRequest.swift in Sources */,
 				559A51F027DFA085001803C9 /* AppDelegate.swift in Sources */,

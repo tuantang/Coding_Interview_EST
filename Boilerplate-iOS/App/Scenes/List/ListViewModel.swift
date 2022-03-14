@@ -10,13 +10,14 @@ import RxCocoa
 
 protocol ListViewModelInputs {
     func refresh()
+    func tapped(indexRow: Int)
     var loadTrigger: PublishSubject<Void> { get }
 }
 
 protocol ListViewModelOutputs {
-    var repo: BehaviorRelay<(data: [User]?, error: GenericError?)> { get }
+    var elements: BehaviorRelay<(data: [User]?, error: GenericError?)> { get }
     var indicator: Driver<Bool> { get }
-    var error: PublishSubject<Error> { get }
+    var selectedViewModel: Driver<DetailViewModel> { get }
 }
 
 protocol ListViewModelType {
@@ -28,12 +29,14 @@ class ListViewModel: ListViewModelType, ListViewModelInputs, ListViewModelOutput
 
     internal var loadTrigger: PublishSubject<Void>
     
-    internal var repo: BehaviorRelay<(data: [User]?, error: GenericError?)>
+    internal var elements: BehaviorRelay<(data: [User]?, error: GenericError?)>
     internal var indicator: Driver<Bool>
-    internal var error: PublishSubject<Error>
+    public var selectedViewModel: Driver<DetailViewModel>
     
     var inputs: ListViewModelInputs { return self }
     var outputs: ListViewModelOutputs { return self }
+    
+    let selectedUser = BehaviorRelay<User?>(value: nil)
     
     private let disposeBag = DisposeBag()
     private let githubRequest = GithubRequest()
@@ -44,10 +47,9 @@ class ListViewModel: ListViewModelType, ListViewModelInputs, ListViewModelOutput
         
         let ActivityIndicator = ActivityIndicator()
         self.indicator = ActivityIndicator.asDriver()
+        self.selectedViewModel = Driver.empty()
         
-        self.repo = BehaviorRelay<(data: [User]?, error: GenericError?)>(value: (data: nil, error: nil))
-        self.error = PublishSubject<Error>()
-        
+        self.elements = BehaviorRelay<(data: [User]?, error: GenericError?)>(value: (data: nil, error: nil))
         
         let loadRequest = self.indicator.asObservable()
             .sample(self.loadTrigger)
@@ -56,14 +58,25 @@ class ListViewModel: ListViewModelType, ListViewModelInputs, ListViewModelOutput
                 return isLoading ? Observable.empty() : self.githubRequest.getUsers().trackActivity(ActivityIndicator)
             }
         loadRequest
-            .bind(to: self.repo)
+            .bind(to: self.elements)
             .disposed(by: disposeBag)
         
+        self.selectedViewModel = self.selectedUser.asDriver()
+            .compactMap { $0 }
+            .flatMapLatest { user -> Driver<DetailViewModel> in
+                return Driver.just(DetailViewModel(user: user))
+            }
     }
     
     public func refresh() {
         self.loadTrigger
             .onNext(())
+    }
+    
+    public func tapped(indexRow: Int) {
+        guard let users = self.elements.value.data, users.count > indexRow else { return }
+        let user = users[indexRow]
+        self.selectedUser.accept(user)
     }
 
 }

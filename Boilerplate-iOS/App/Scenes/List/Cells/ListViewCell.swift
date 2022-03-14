@@ -86,8 +86,6 @@ extension ListViewCell {
             return view
         }()
         
-        
-        
         self.contentView.addSubview(coverStackView)
         self.contentView.addSubview(lineView)
         

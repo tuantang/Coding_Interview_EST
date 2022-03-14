@@ -69,7 +69,7 @@ fileprivate extension ListViewController {
         
         self.viewModel
             .outputs
-            .repo
+            .elements
             .map({ result -> [User] in
                 return result.data ?? []
             })
@@ -79,17 +79,36 @@ fileprivate extension ListViewController {
                 return cell
             }.disposed(by: disposeBag)
         
-        self.refreshControl.rx.controlEvent(.valueChanged)
+        self.refreshControl.rx
+            .controlEvent(.valueChanged)
             .bind(to: self.viewModel.inputs.loadTrigger)
             .disposed(by: disposeBag)
         
-        self.viewModel.outputs.indicator
+        self.viewModel
+            .outputs
+            .indicator
             .asObservable()
             .subscribe(onNext: { [weak self] isLoading in
                 guard let self = self else { return }
                 if isLoading { self.refreshControl.endRefreshing() }
             })
             .disposed(by: disposeBag)
+        
+        self.tableView.rx
+            .itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                guard let self = self else { return }
+                self.viewModel.inputs.tapped(indexRow: indexPath.row)
+            }).disposed(by: disposeBag)
+        
+        self.viewModel
+            .outputs
+            .selectedViewModel
+            .drive(onNext: { viewModel in
+                let viewController = DetailViewController()
+                viewController.viewModel = viewModel
+                self.navigationController?.pushViewController(viewController, animated: true)
+            }).disposed(by: disposeBag)
 
     }
     

@@ -1,16 +1,15 @@
 //
-//  ListViewCell.swift
+//  ProfileInfoView.swift
 //  Boilerplate-iOS
 //
-//  Created by Tuan Tang on 14/03/2022.
+//  Created by Tang Tuan on 3/15/22.
 //
 
 import UIKit
-import Kingfisher
 
-class ListViewCell: UITableViewCell {
+class ProfileInfoView: UIView {
     
-    private var avatarImageView: UIImageView = {
+    private let avatarImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 25
@@ -18,53 +17,47 @@ class ListViewCell: UITableViewCell {
         return imageView
     }()
     
-    private var loginLabel: UILabel = {
+    private let nameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.textColor = .darkGray
         return label
     }()
     
-    private var htmlLabel: UILabel = {
+    private let locationLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = .lightGray
         return label
     }()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.configureCell()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.configureView()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.configureCell()
+        self.configureView()
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        self.avatarImageView.image = nil
-    }
-    
-    func configureCell() {
-        self.selectionStyle = .none
-        
+    func configureView() {
         self.adjustUI()
     }
     
-    func configureModel(model: User) {
-        guard let avatarURL = model.avatarURL, let url = URL(string: avatarURL)  else { return }
-        self.avatarImageView.kf.setImage(with: url)
-        self.loginLabel.text = model.login
-        self.htmlLabel.text = model.htmlURL
+    func configureModel(avatarURL: String?, name: String?, localtion: String?) {
+        if let avatarURL = avatarURL, let url = URL(string: avatarURL) {
+            self.avatarImageView.kf.setImage(with: url)
+        }
+        self.nameLabel.text = name
+        self.locationLabel.text = localtion
     }
 }
 
-extension ListViewCell {
+extension ProfileInfoView {
     func adjustUI() {
         let labelStackView: UIStackView = {
-            let stackView = UIStackView(arrangedSubviews: [self.loginLabel, self.htmlLabel])
+            let stackView = UIStackView(arrangedSubviews: [self.nameLabel, self.locationLabel])
             stackView.axis = .vertical
             stackView.alignment = .fill
             stackView.distribution = .fill
@@ -85,19 +78,19 @@ extension ListViewCell {
             return view
         }()
         
-        self.contentView.addSubview(coverStackView)
-        self.contentView.addSubview(lineView)
+        self.addSubview(coverStackView)
+        self.addSubview(lineView)
         
         coverStackView
-            .top(self.contentView.topAnchor, constant: 15)
-            .bottom(self.contentView.bottomAnchor, constant: 15)
-            .leading(self.contentView.leadingAnchor, constant: 15)
+            .top(self.topAnchor, constant: 15)
+            .bottom(self.bottomAnchor, constant: 15)
+            .leading(self.leadingAnchor, constant: 15)
         
         lineView
             .height(0.5)
-            .leading(self.contentView.leadingAnchor)
-            .trailing(self.contentView.trailingAnchor)
-            .bottom(self.contentView.bottomAnchor)
+            .leading(self.leadingAnchor)
+            .trailing(self.trailingAnchor)
+            .bottom(self.bottomAnchor)
         
         self.avatarImageView
             .width(50)
@@ -105,4 +98,3 @@ extension ListViewCell {
 
     }
 }
-

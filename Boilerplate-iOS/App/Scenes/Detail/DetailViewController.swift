@@ -11,15 +11,11 @@ import RxCocoa
 
 class DetailViewController: UIViewController, UITableViewDelegate {
     
-    private var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .plain)
-        tableView.backgroundColor = .white
-        tableView.showsVerticalScrollIndicator = false
-        tableView.separatorStyle = .none
-        tableView.estimatedRowHeight = 60.0
-        tableView.rowHeight = UITableView.automaticDimension
-        return tableView
-    }()
+    @IBOutlet private weak var stackView: UIStackView!
+    
+    let profileInfoView = ProfileInfoView()
+    let bioInfoView = BioInfoView()
+    let followInfoView = FollowInfoView()
     
     private let disposeBag = DisposeBag()
     
@@ -35,21 +31,27 @@ fileprivate extension DetailViewController {
     func setup() {
         self.navigationItem.title = "Detail"
         self.view.backgroundColor = .white
-        self.configureTableView()
+        self.configureView()
+        self.bindRx()
     }
     
-    func configureTableView() {
-        self.view.addSubview(self.tableView)
+    func configureView() {
+        [self.profileInfoView, self.bioInfoView, self.followInfoView].forEach { self.stackView.addArrangedSubview($0) }
+    }
+    
+    func bindRx() {
+        self.viewModel.inputs.loadDetail()
         
-        self.tableView.register(ListViewCell.self, forCellReuseIdentifier: "cell")
-        
-        self.tableView
-            .top(self.view.topAnchor)
-            .bottom(self.view.bottomAnchor)
-            .leading(self.view.leadingAnchor)
-            .trailing(self.view.trailingAnchor)
-        
-        self.tableView.rx.setDelegate(self)
-            .disposed(by: disposeBag)
+        self.viewModel
+            .outputs
+            .element
+            .asObservable()
+            .subscribe(onNext: { [weak self] element in
+                guard let self = self, let user = element.data else { return }
+                self.profileInfoView.configureModel(avatarURL: user.avatarURL, name: user.name, localtion: user.location)
+                self.bioInfoView.configureModel(bio: user.bio)
+                self.followInfoView.configureModel(publicRepos: user.publicRepos, followers: user.followers, followings: user.following)
+                self.viewModel.inputs.saveToRealm(user: user)
+            }).disposed(by: disposeBag)
     }
 }

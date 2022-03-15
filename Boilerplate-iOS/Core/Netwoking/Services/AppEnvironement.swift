@@ -23,11 +23,11 @@ extension AppEnvironement {
     public static var baseURL: URL {
         switch AppEnvironement.currentState {
         case .production:
-            return URL(string: "https://api.github.com/")!
+            return URL(string: "https://api.github.com")!
         case .staging:
-            return URL(string: "https://api.github.com/")!
+            return URL(string: "https://api.github.com")!
         case .development:
-            return URL(string: "https://api.github.com/")!
+            return URL(string: "https://api.github.com")!
         }
     }
 }

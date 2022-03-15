@@ -44,9 +44,23 @@ public extension UIView {
     }
     
     @discardableResult
+    func width(_ dimension: NSLayoutDimension, multiplier: CGFloat = 1.0, constant: CGFloat = 0.0) -> UIView {
+        translatesAutoresizingMaskIntoConstraints = false
+        widthAnchor.constraint(equalTo: dimension, multiplier: multiplier, constant: constant).isActive = true
+        return self
+    }
+    
+    @discardableResult
     func height(_ constant: CGFloat) -> UIView {
         translatesAutoresizingMaskIntoConstraints = false
         heightAnchor.constraint(equalToConstant: constant).isActive = true
+        return self
+    }
+    
+    @discardableResult
+    func height(_ dimension: NSLayoutDimension, multiplier: CGFloat = 1.0, constant: CGFloat = 0.0) -> UIView {
+        translatesAutoresizingMaskIntoConstraints = false
+        heightAnchor.constraint(equalTo: dimension, multiplier: multiplier, constant: constant).isActive = true
         return self
     }
     

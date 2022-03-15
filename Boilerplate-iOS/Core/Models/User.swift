@@ -5,37 +5,24 @@
 //  Created by Tuan Tang on 14/03/2022.
 //
 
-public struct User: Codable {
-    public let login: String
-    public let id: Int
-    public let nodeID: String
-    public let avatarURL: String
-    public let gravatarID: String
-    public let url, htmlURL, followersURL: String
-    public let followingURL, gistsURL, starredURL: String
-    public let subscriptionsURL, organizationsURL, reposURL: String
-    public let eventsURL: String
-    public let receivedEventsURL: String
-    public let type: String
-    public let siteAdmin: Bool
+struct User: Codable {
+    var id: Int?
+    var login: String?
+    var avatarURL: String?
+    var htmlURL: String?
+    var bio: String?
+    var publicRepos: Int?
+    var followers: Int?
+    var following: Int?
+    var location: String?
+    var name: String?
     
     enum CodingKeys: String, CodingKey {
         case login, id
-        case nodeID = "node_id"
         case avatarURL = "avatar_url"
-        case gravatarID = "gravatar_id"
-        case url
         case htmlURL = "html_url"
-        case followersURL = "followers_url"
-        case followingURL = "following_url"
-        case gistsURL = "gists_url"
-        case starredURL = "starred_url"
-        case subscriptionsURL = "subscriptions_url"
-        case organizationsURL = "organizations_url"
-        case reposURL = "repos_url"
-        case eventsURL = "events_url"
-        case receivedEventsURL = "received_events_url"
-        case type
-        case siteAdmin = "site_admin"
+        case bio, followers, following
+        case publicRepos = "public_repos"
+        case location, name
     }
 }

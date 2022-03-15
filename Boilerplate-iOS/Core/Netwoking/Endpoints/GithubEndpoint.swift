@@ -9,6 +9,7 @@ import Moya
 
 enum GithubEndpoint {
     case users
+    case detail(String)
 }
 
 extension GithubEndpoint: TargetType {
@@ -19,13 +20,15 @@ extension GithubEndpoint: TargetType {
     var path: String {
         switch self {
         case .users:
-            return "users"
+            return Path.Github.users
+        case .detail(let login):
+            return Path.Github.detail.replace(target: "{login}", withString: login)
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .users:
+        case .users, .detail:
             return .get
         }
     }
@@ -36,7 +39,7 @@ extension GithubEndpoint: TargetType {
     
     var parameters: [String: Any]? {
         switch self {
-        case .users:
+        case .users, .detail:
             return nil
         }
     }

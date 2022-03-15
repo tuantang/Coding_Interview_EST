@@ -19,8 +19,8 @@
 		559A522327DFA120001803C9 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A522227DFA120001803C9 /* BaseCoordinator.swift */; };
 		559A522527DFA147001803C9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A522427DFA147001803C9 /* AppCoordinator.swift */; };
 		559A522627DFA147001803C9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A522427DFA147001803C9 /* AppCoordinator.swift */; };
-		559A523027DFA1DA001803C9 /* UIView_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A522F27DFA1DA001803C9 /* UIView_Ext.swift */; };
-		559A523127DFA1DA001803C9 /* UIView_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A522F27DFA1DA001803C9 /* UIView_Ext.swift */; };
+		559A523027DFA1DA001803C9 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A522F27DFA1DA001803C9 /* UIViewExt.swift */; };
+		559A523127DFA1DA001803C9 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A522F27DFA1DA001803C9 /* UIViewExt.swift */; };
 		559A523327DFA1FB001803C9 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A523227DFA1FB001803C9 /* ListViewController.swift */; };
 		559A523427DFA1FB001803C9 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A523227DFA1FB001803C9 /* ListViewController.swift */; };
 		559A523627DFA212001803C9 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A523527DFA212001803C9 /* ListViewModel.swift */; };
@@ -47,8 +47,24 @@
 		559A525A27DFA451001803C9 /* AppEnvironement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A525827DFA451001803C9 /* AppEnvironement.swift */; };
 		559A525D27DFA74F001803C9 /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A525C27DFA74F001803C9 /* ListViewCell.swift */; };
 		559A525E27DFA74F001803C9 /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A525C27DFA74F001803C9 /* ListViewCell.swift */; };
+		55C4D3C627E07C0E0045A06B /* BioInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C4D3C527E07C0E0045A06B /* BioInfoView.swift */; };
+		55C4D3C827E080AB0045A06B /* FollowInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C4D3C727E080AA0045A06B /* FollowInfoView.swift */; };
 		55E510A927DFBE0400486864 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E510A827DFBE0400486864 /* DetailViewController.swift */; };
 		55E510AB27DFBE5400486864 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E510AA27DFBE5400486864 /* DetailViewModel.swift */; };
+		55F20FAE27E0615E002C084D /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F20FAD27E0615E002C084D /* StringExt.swift */; };
+		55F20FB027E0619E002C084D /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F20FAF27E0619E002C084D /* Path.swift */; };
+		55F20FB327E065BE002C084D /* RMUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F20FB227E065BE002C084D /* RMUser.swift */; };
+		55F20FB627E06691002C084D /* ModelConvertibleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F20FB527E06691002C084D /* ModelConvertibleType.swift */; };
+		55F20FB827E066A6002C084D /* RealmRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F20FB727E066A6002C084D /* RealmRepresentable.swift */; };
+		55F20FBB27E06788002C084D /* RealmExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F20FBA27E06788002C084D /* RealmExt.swift */; };
+		55F20FBE27E0685F002C084D /* RealmFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F20FBD27E0685F002C084D /* RealmFactory.swift */; };
+		55F20FC027E068CA002C084D /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F20FBF27E068CA002C084D /* Repository.swift */; };
+		55F20FC227E0690D002C084D /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F20FC127E0690D002C084D /* RealmService.swift */; };
+		55F20FC527E0694C002C084D /* StorageUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F20FC427E0694C002C084D /* StorageUserService.swift */; };
+		55F20FC727E07224002C084D /* DetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55F20FC627E07224002C084D /* DetailViewController.storyboard */; };
+		55F20FC927E072F7002C084D /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F20FC827E072F7002C084D /* UIViewControllerExt.swift */; };
+		55F20FCB27E07341002C084D /* NSObjectExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F20FCA27E07341002C084D /* NSObjectExt.swift */; };
+		55F20FCE27E07848002C084D /* ProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F20FCD27E07848002C084D /* ProfileInfoView.swift */; };
 		74BECF7C1ADE29A8D1352150 /* Pods_Boilerplate_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA17B94F2DE45D3E53F5722 /* Pods_Boilerplate_iOSTests.framework */; };
 		D5614F18D236509C5F325D84 /* Pods_Boilerplate_iOS_Boilerplate_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D872DBDE31253549A2732C8 /* Pods_Boilerplate_iOS_Boilerplate_iOSUITests.framework */; };
 /* End PBXBuildFile section */
@@ -89,7 +105,7 @@
 		559A521227DFA087001803C9 /* Boilerplate_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boilerplate_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		559A522227DFA120001803C9 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		559A522427DFA147001803C9 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		559A522F27DFA1DA001803C9 /* UIView_Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_Ext.swift; sourceTree = "<group>"; };
+		559A522F27DFA1DA001803C9 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		559A523227DFA1FB001803C9 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		559A523527DFA212001803C9 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		559A523927DFA23D001803C9 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
@@ -103,8 +119,24 @@
 		559A525527DFA432001803C9 /* GithubRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRequest.swift; sourceTree = "<group>"; };
 		559A525827DFA451001803C9 /* AppEnvironement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironement.swift; sourceTree = "<group>"; };
 		559A525C27DFA74F001803C9 /* ListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
+		55C4D3C527E07C0E0045A06B /* BioInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioInfoView.swift; sourceTree = "<group>"; };
+		55C4D3C727E080AA0045A06B /* FollowInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowInfoView.swift; sourceTree = "<group>"; };
 		55E510A827DFBE0400486864 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		55E510AA27DFBE5400486864 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		55F20FAD27E0615E002C084D /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		55F20FAF27E0619E002C084D /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
+		55F20FB227E065BE002C084D /* RMUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMUser.swift; sourceTree = "<group>"; };
+		55F20FB527E06691002C084D /* ModelConvertibleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelConvertibleType.swift; sourceTree = "<group>"; };
+		55F20FB727E066A6002C084D /* RealmRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRepresentable.swift; sourceTree = "<group>"; };
+		55F20FBA27E06788002C084D /* RealmExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmExt.swift; sourceTree = "<group>"; };
+		55F20FBD27E0685F002C084D /* RealmFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmFactory.swift; sourceTree = "<group>"; };
+		55F20FBF27E068CA002C084D /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		55F20FC127E0690D002C084D /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		55F20FC427E0694C002C084D /* StorageUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageUserService.swift; sourceTree = "<group>"; };
+		55F20FC627E07224002C084D /* DetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailViewController.storyboard; sourceTree = "<group>"; };
+		55F20FC827E072F7002C084D /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		55F20FCA27E07341002C084D /* NSObjectExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExt.swift; sourceTree = "<group>"; };
+		55F20FCD27E07848002C084D /* ProfileInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoView.swift; sourceTree = "<group>"; };
 		6DA17B94F2DE45D3E53F5722 /* Pods_Boilerplate_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Boilerplate_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE4A5F795EEF706CE9277AD9 /* Pods_Boilerplate_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Boilerplate_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8A9453F8F1390CF53A68D1 /* Pods-Boilerplate-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boilerplate-iOS.release.xcconfig"; path = "Target Support Files/Pods-Boilerplate-iOS/Pods-Boilerplate-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -256,7 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				559A522027DFA0EC001803C9 /* Application */,
-				559A522D27DFA1B8001803C9 /* Common */,
+				559A522D27DFA1B8001803C9 /* Utilities */,
 				559A522127DFA10B001803C9 /* Coordinator */,
 				559A522727DFA15F001803C9 /* Scenes */,
 			);
@@ -274,22 +306,30 @@
 		559A522C27DFA1A9001803C9 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				55F20FC327E06931002C084D /* Services */,
+				55F20FBC27E0684C002C084D /* Repositories */,
+				55F20FB927E0676C002C084D /* Extensions */,
+				55F20FB427E06680002C084D /* Convertions */,
+				55F20FB127E065AC002C084D /* Entities */,
 			);
 			path = Database;
 			sourceTree = "<group>";
 		};
-		559A522D27DFA1B8001803C9 /* Common */ = {
+		559A522D27DFA1B8001803C9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				559A522E27DFA1CA001803C9 /* Extensions */,
 			);
-			path = Common;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		559A522E27DFA1CA001803C9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				559A522F27DFA1DA001803C9 /* UIView_Ext.swift */,
+				559A522F27DFA1DA001803C9 /* UIViewExt.swift */,
+				55F20FAD27E0615E002C084D /* StringExt.swift */,
+				55F20FC827E072F7002C084D /* UIViewControllerExt.swift */,
+				55F20FCA27E07341002C084D /* NSObjectExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -300,6 +340,7 @@
 				559A523927DFA23D001803C9 /* ActivityIndicator.swift */,
 				559A523C27DFA255001803C9 /* APIService.swift */,
 				559A525827DFA451001803C9 /* AppEnvironement.swift */,
+				55F20FAF27E0619E002C084D /* Path.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -348,10 +389,65 @@
 		55E510A727DFBDF300486864 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				55F20FC627E07224002C084D /* DetailViewController.storyboard */,
 				55E510A827DFBE0400486864 /* DetailViewController.swift */,
 				55E510AA27DFBE5400486864 /* DetailViewModel.swift */,
+				55F20FCC27E07704002C084D /* Views */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		55F20FB127E065AC002C084D /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				55F20FB227E065BE002C084D /* RMUser.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		55F20FB427E06680002C084D /* Convertions */ = {
+			isa = PBXGroup;
+			children = (
+				55F20FB527E06691002C084D /* ModelConvertibleType.swift */,
+				55F20FB727E066A6002C084D /* RealmRepresentable.swift */,
+			);
+			path = Convertions;
+			sourceTree = "<group>";
+		};
+		55F20FB927E0676C002C084D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				55F20FBA27E06788002C084D /* RealmExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		55F20FBC27E0684C002C084D /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				55F20FBD27E0685F002C084D /* RealmFactory.swift */,
+				55F20FBF27E068CA002C084D /* Repository.swift */,
+				55F20FC127E0690D002C084D /* RealmService.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		55F20FC327E06931002C084D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				55F20FC427E0694C002C084D /* StorageUserService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		55F20FCC27E07704002C084D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				55F20FCD27E07848002C084D /* ProfileInfoView.swift */,
+				55C4D3C527E07C0E0045A06B /* BioInfoView.swift */,
+				55C4D3C727E080AA0045A06B /* FollowInfoView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D4808AFA3F028B1029240E5A /* Frameworks */ = {
@@ -486,6 +582,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55F20FC727E07224002C084D /* DetailViewController.storyboard in Resources */,
 				559A51FC27DFA086001803C9 /* LaunchScreen.storyboard in Resources */,
 				559A51F927DFA086001803C9 /* Assets.xcassets in Resources */,
 				559A51F727DFA085001803C9 /* Main.storyboard in Resources */,
@@ -619,23 +716,38 @@
 				559A524B27DFA3B8001803C9 /* User.swift in Sources */,
 				559A525927DFA451001803C9 /* AppEnvironement.swift in Sources */,
 				559A524827DFA2B5001803C9 /* InternalErrorCode.swift in Sources */,
+				55F20FCE27E07848002C084D /* ProfileInfoView.swift in Sources */,
 				55E510AB27DFBE5400486864 /* DetailViewModel.swift in Sources */,
-				559A523027DFA1DA001803C9 /* UIView_Ext.swift in Sources */,
+				559A523027DFA1DA001803C9 /* UIViewExt.swift in Sources */,
+				55F20FB627E06691002C084D /* ModelConvertibleType.swift in Sources */,
 				559A524527DFA2A4001803C9 /* GenericError.swift in Sources */,
+				55F20FC027E068CA002C084D /* Repository.swift in Sources */,
 				559A522527DFA147001803C9 /* AppCoordinator.swift in Sources */,
 				559A524127DFA285001803C9 /* Moya+Response.swift in Sources */,
 				559A523627DFA212001803C9 /* ListViewModel.swift in Sources */,
 				559A523327DFA1FB001803C9 /* ListViewController.swift in Sources */,
+				55C4D3C627E07C0E0045A06B /* BioInfoView.swift in Sources */,
+				55F20FAE27E0615E002C084D /* StringExt.swift in Sources */,
 				559A523A27DFA23D001803C9 /* ActivityIndicator.swift in Sources */,
+				55F20FC927E072F7002C084D /* UIViewControllerExt.swift in Sources */,
+				55F20FC527E0694C002C084D /* StorageUserService.swift in Sources */,
+				55F20FB027E0619E002C084D /* Path.swift in Sources */,
 				55E510A927DFBE0400486864 /* DetailViewController.swift in Sources */,
+				55F20FB827E066A6002C084D /* RealmRepresentable.swift in Sources */,
+				55F20FB327E065BE002C084D /* RMUser.swift in Sources */,
 				559A523D27DFA255001803C9 /* APIService.swift in Sources */,
+				55F20FCB27E07341002C084D /* NSObjectExt.swift in Sources */,
 				559A525627DFA432001803C9 /* GithubRequest.swift in Sources */,
 				559A51F027DFA085001803C9 /* AppDelegate.swift in Sources */,
 				559A522327DFA120001803C9 /* BaseCoordinator.swift in Sources */,
 				559A51F227DFA085001803C9 /* SceneDelegate.swift in Sources */,
+				55C4D3C827E080AB0045A06B /* FollowInfoView.swift in Sources */,
+				55F20FC227E0690D002C084D /* RealmService.swift in Sources */,
 				559A525227DFA40F001803C9 /* GithubEndpoint.swift in Sources */,
+				55F20FBE27E0685F002C084D /* RealmFactory.swift in Sources */,
 				559A525D27DFA74F001803C9 /* ListViewCell.swift in Sources */,
 				559A524E27DFA3DF001803C9 /* ListViewCoordinator.swift in Sources */,
+				55F20FBB27E06788002C084D /* RealmExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,7 +757,7 @@
 			files = (
 				559A524927DFA2B5001803C9 /* InternalErrorCode.swift in Sources */,
 				559A523727DFA212001803C9 /* ListViewModel.swift in Sources */,
-				559A523127DFA1DA001803C9 /* UIView_Ext.swift in Sources */,
+				559A523127DFA1DA001803C9 /* UIViewExt.swift in Sources */,
 				559A524F27DFA3DF001803C9 /* ListViewCoordinator.swift in Sources */,
 				559A525E27DFA74F001803C9 /* ListViewCell.swift in Sources */,
 				559A522627DFA147001803C9 /* AppCoordinator.swift in Sources */,

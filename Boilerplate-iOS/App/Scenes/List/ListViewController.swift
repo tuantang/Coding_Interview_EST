@@ -69,7 +69,7 @@ fileprivate extension ListViewController {
         
         self.viewModel
             .outputs
-            .elements
+            .repo
             .map({ result -> [User] in
                 return result.data ?? []
             })
@@ -78,6 +78,15 @@ fileprivate extension ListViewController {
                 cell.configureModel(model: element)
                 return cell
             }.disposed(by: disposeBag)
+        
+        self.viewModel
+            .outputs
+            .repo
+            .asObservable()
+            .subscribe(onNext: { [weak self] repo in
+                guard let self = self, let users = repo.data else { return }
+                self.viewModel.inputs.saveToRealm(users: users)
+            }).disposed(by: disposeBag)
         
         self.refreshControl.rx
             .controlEvent(.valueChanged)
@@ -105,7 +114,7 @@ fileprivate extension ListViewController {
             .outputs
             .selectedViewModel
             .drive(onNext: { viewModel in
-                let viewController = DetailViewController()
+                let viewController = DetailViewController.instantiate()
                 viewController.viewModel = viewModel
                 self.navigationController?.pushViewController(viewController, animated: true)
             }).disposed(by: disposeBag)

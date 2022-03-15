@@ -7,15 +7,17 @@
 
 import RxSwift
 import RxCocoa
+import RealmSwift
 
 protocol ListViewModelInputs {
     func refresh()
     func tapped(indexRow: Int)
+    func saveToRealm(users: [User])
     var loadTrigger: PublishSubject<Void> { get }
 }
 
 protocol ListViewModelOutputs {
-    var elements: BehaviorRelay<(data: [User]?, error: GenericError?)> { get }
+    var repo: BehaviorRelay<(data: [User]?, error: GenericError?)> { get }
     var indicator: Driver<Bool> { get }
     var selectedViewModel: Driver<DetailViewModel> { get }
 }
@@ -29,7 +31,7 @@ class ListViewModel: ListViewModelType, ListViewModelInputs, ListViewModelOutput
 
     internal var loadTrigger: PublishSubject<Void>
     
-    internal var elements: BehaviorRelay<(data: [User]?, error: GenericError?)>
+    internal var repo: BehaviorRelay<(data: [User]?, error: GenericError?)>
     internal var indicator: Driver<Bool>
     public var selectedViewModel: Driver<DetailViewModel>
     
@@ -40,6 +42,7 @@ class ListViewModel: ListViewModelType, ListViewModelInputs, ListViewModelOutput
     
     private let disposeBag = DisposeBag()
     private let githubRequest = GithubRequest()
+    private let userRealmService = RealmService.User
     
     init() {
         
@@ -49,7 +52,7 @@ class ListViewModel: ListViewModelType, ListViewModelInputs, ListViewModelOutput
         self.indicator = ActivityIndicator.asDriver()
         self.selectedViewModel = Driver.empty()
         
-        self.elements = BehaviorRelay<(data: [User]?, error: GenericError?)>(value: (data: nil, error: nil))
+        self.repo = BehaviorRelay<(data: [User]?, error: GenericError?)>(value: (data: userRealmService.allUser(), error: nil))
         
         let loadRequest = self.indicator.asObservable()
             .sample(self.loadTrigger)
@@ -58,25 +61,29 @@ class ListViewModel: ListViewModelType, ListViewModelInputs, ListViewModelOutput
                 return isLoading ? Observable.empty() : self.githubRequest.getUsers().trackActivity(ActivityIndicator)
             }
         loadRequest
-            .bind(to: self.elements)
+            .bind(to: self.repo)
             .disposed(by: disposeBag)
         
         self.selectedViewModel = self.selectedUser.asDriver()
-            .compactMap { $0 }
             .flatMapLatest { user -> Driver<DetailViewModel> in
+                guard let user = user else { return Driver.empty() }
                 return Driver.just(DetailViewModel(user: user))
             }
     }
     
-    public func refresh() {
+    func refresh() {
         self.loadTrigger
             .onNext(())
     }
     
-    public func tapped(indexRow: Int) {
-        guard let users = self.elements.value.data, users.count > indexRow else { return }
+    func tapped(indexRow: Int) {
+        guard let users = self.repo.value.data, users.count > indexRow else { return }
         let user = users[indexRow]
         self.selectedUser.accept(user)
+    }
+    
+    func saveToRealm(users: [User]) {
+        users.forEach { userRealmService.saveUser(element: $0) }
     }
 
 }

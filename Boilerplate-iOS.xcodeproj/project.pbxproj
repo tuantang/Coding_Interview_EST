@@ -8,6 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		1D3A69467CBFB8BB8C8804BD /* Pods_Boilerplate_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4A5F795EEF706CE9277AD9 /* Pods_Boilerplate_iOS.framework */; };
+		5578954227E0AC3800847BC9 /* GithubAPIUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5578954127E0AC3800847BC9 /* GithubAPIUnitTest.swift */; };
+		5578954327E0B02E00847BC9 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F20FAF27E0619E002C084D /* Path.swift */; };
+		5578954427E0B03800847BC9 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A522227DFA120001803C9 /* BaseCoordinator.swift */; };
+		5578954527E0B04D00847BC9 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E510AA27DFBE5400486864 /* DetailViewModel.swift */; };
+		5578954627E0B05500847BC9 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F20FC127E0690D002C084D /* RealmService.swift */; };
+		5578954727E0B06F00847BC9 /* StorageUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F20FC427E0694C002C084D /* StorageUserService.swift */; };
+		5578954827E0B07500847BC9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E510A827DFBE0400486864 /* DetailViewController.swift */; };
+		5578954927E0B08500847BC9 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F20FC827E072F7002C084D /* UIViewControllerExt.swift */; };
+		5578954A27E0B09100847BC9 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F20FBF27E068CA002C084D /* Repository.swift */; };
+		5578954B27E0B09700847BC9 /* ProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F20FCD27E07848002C084D /* ProfileInfoView.swift */; };
+		5578954C27E0B09C00847BC9 /* BioInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C4D3C527E07C0E0045A06B /* BioInfoView.swift */; };
+		5578954D27E0B0A100847BC9 /* FollowInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C4D3C727E080AA0045A06B /* FollowInfoView.swift */; };
+		5578954E27E0B0B300847BC9 /* RealmRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F20FB727E066A6002C084D /* RealmRepresentable.swift */; };
+		5578954F27E0B0B800847BC9 /* RealmFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F20FBD27E0685F002C084D /* RealmFactory.swift */; };
+		5578955027E0B0D000847BC9 /* ModelConvertibleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F20FB527E06691002C084D /* ModelConvertibleType.swift */; };
+		5578955127E0B10200847BC9 /* RealmExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F20FBA27E06788002C084D /* RealmExt.swift */; };
+		5578955227E0B1A800847BC9 /* RMUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F20FB227E065BE002C084D /* RMUser.swift */; };
 		559A51F027DFA085001803C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A51EF27DFA085001803C9 /* AppDelegate.swift */; };
 		559A51F227DFA085001803C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A51F127DFA085001803C9 /* SceneDelegate.swift */; };
 		559A51F727DFA085001803C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 559A51F527DFA085001803C9 /* Main.storyboard */; };
@@ -91,6 +108,7 @@
 		1AB4117BF44191D850E4C8D0 /* Pods-Boilerplate-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boilerplate-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Boilerplate-iOSTests/Pods-Boilerplate-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2D505B2FC17ED3EA7389A301 /* Pods-Boilerplate-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boilerplate-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Boilerplate-iOSTests/Pods-Boilerplate-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		2D872DBDE31253549A2732C8 /* Pods_Boilerplate_iOS_Boilerplate_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Boilerplate_iOS_Boilerplate_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5578954127E0AC3800847BC9 /* GithubAPIUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPIUnitTest.swift; sourceTree = "<group>"; };
 		559A51EC27DFA085001803C9 /* Boilerplate-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Boilerplate-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		559A51EF27DFA085001803C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		559A51F127DFA085001803C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -211,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				559A520627DFA086001803C9 /* Boilerplate_iOSTests.swift */,
+				5578954127E0AC3800847BC9 /* GithubAPIUnitTest.swift */,
 			);
 			path = "Boilerplate-iOSTests";
 			sourceTree = "<group>";
@@ -757,20 +776,37 @@
 			files = (
 				559A524927DFA2B5001803C9 /* InternalErrorCode.swift in Sources */,
 				559A523727DFA212001803C9 /* ListViewModel.swift in Sources */,
+				5578954927E0B08500847BC9 /* UIViewControllerExt.swift in Sources */,
+				5578954827E0B07500847BC9 /* DetailViewController.swift in Sources */,
+				5578954B27E0B09700847BC9 /* ProfileInfoView.swift in Sources */,
 				559A523127DFA1DA001803C9 /* UIViewExt.swift in Sources */,
+				5578954527E0B04D00847BC9 /* DetailViewModel.swift in Sources */,
 				559A524F27DFA3DF001803C9 /* ListViewCoordinator.swift in Sources */,
+				5578954A27E0B09100847BC9 /* Repository.swift in Sources */,
 				559A525E27DFA74F001803C9 /* ListViewCell.swift in Sources */,
 				559A522627DFA147001803C9 /* AppCoordinator.swift in Sources */,
+				5578955127E0B10200847BC9 /* RealmExt.swift in Sources */,
 				559A523E27DFA255001803C9 /* APIService.swift in Sources */,
+				5578955027E0B0D000847BC9 /* ModelConvertibleType.swift in Sources */,
 				559A523427DFA1FB001803C9 /* ListViewController.swift in Sources */,
 				559A523B27DFA23D001803C9 /* ActivityIndicator.swift in Sources */,
 				559A524627DFA2A4001803C9 /* GenericError.swift in Sources */,
+				5578954E27E0B0B300847BC9 /* RealmRepresentable.swift in Sources */,
 				559A524227DFA285001803C9 /* Moya+Response.swift in Sources */,
 				559A525A27DFA451001803C9 /* AppEnvironement.swift in Sources */,
 				559A525727DFA432001803C9 /* GithubRequest.swift in Sources */,
 				559A525327DFA40F001803C9 /* GithubEndpoint.swift in Sources */,
 				559A520727DFA086001803C9 /* Boilerplate_iOSTests.swift in Sources */,
+				5578954727E0B06F00847BC9 /* StorageUserService.swift in Sources */,
+				5578954D27E0B0A100847BC9 /* FollowInfoView.swift in Sources */,
+				5578954627E0B05500847BC9 /* RealmService.swift in Sources */,
+				5578954427E0B03800847BC9 /* BaseCoordinator.swift in Sources */,
+				5578955227E0B1A800847BC9 /* RMUser.swift in Sources */,
 				559A524C27DFA3B8001803C9 /* User.swift in Sources */,
+				5578954F27E0B0B800847BC9 /* RealmFactory.swift in Sources */,
+				5578954327E0B02E00847BC9 /* Path.swift in Sources */,
+				5578954227E0AC3800847BC9 /* GithubAPIUnitTest.swift in Sources */,
+				5578954C27E0B09C00847BC9 /* BioInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1005,6 +1041,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tuantang.Boilerplate-iOSTests";
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -1026,6 +1063,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tuantang.Boilerplate-iOSTests";
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;

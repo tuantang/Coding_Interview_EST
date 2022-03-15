@@ -17,7 +17,7 @@ extension StorageUserUseCase {
     }
     
     func allUser() -> [User] {
-        repo.queryAll(keyPath: nil).compactMap { elment in
+        repo.queryAll().compactMap { elment in
             return elment
         }
     }

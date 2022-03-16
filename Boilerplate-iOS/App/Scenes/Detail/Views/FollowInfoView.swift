@@ -57,7 +57,7 @@ extension FollowInfoView {
             let label = UILabel()
             label.font = UIFont.boldSystemFont(ofSize: 18)
             label.textColor = .darkGray
-            label.text = "About"
+            label.text = "Stats"
             return label
         }()
         

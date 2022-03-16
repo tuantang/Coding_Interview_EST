@@ -83,7 +83,13 @@ class ListViewModel: ListViewModelType, ListViewModelInputs, ListViewModelOutput
     }
     
     func saveToRealm(users: [User]) {
-        users.forEach { userRealmService.saveUser(element: $0) }
+        let queue = DispatchQueue(label: "save_users", attributes: .concurrent)
+        users.forEach { user in
+            queue.async { [weak self] in
+                guard let self = self else { return }
+                self.userRealmService.saveUser(element: user)
+            }
+        }
     }
 
 }

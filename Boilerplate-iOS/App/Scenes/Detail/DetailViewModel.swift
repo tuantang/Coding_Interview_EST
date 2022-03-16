@@ -66,6 +66,10 @@ class DetailViewModel: DetailViewModelType, DetailViewModelInputs, DetailViewMod
     }
     
     func saveToRealm(user: User) {
-        userRealmService.saveUser(element: user)
+        let queue = DispatchQueue(label: "save_user", attributes: .concurrent)
+        queue.async { [weak self] in
+            guard let self = self else { return }
+            self.userRealmService.saveUser(element: user)
+        }
     }
 }
